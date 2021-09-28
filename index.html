@@ -342,7 +342,7 @@
             left: 65px;
             right: 65px;
             bottom: 45px;
-            box-shadow: 0 10px 40px #BCBCBD;
+            box-shadow: 0 20px 40px -15px #686d8c42;
         }
 
         .browser-content {
@@ -371,7 +371,7 @@
             width: 100%;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
-            background: #BCBCBD;
+            background: #d8e0e4;
             position: relative;
             display: flex;
         }
@@ -559,18 +559,6 @@
 
 
 
-
-
-
-<section class="slide">
-    <h2>Важно:</h2>
-    <ul></ul>
-        <li>Библиотека при изменениях сравнивает предыдущую версию объекта виртуального DOM с новой версией.</li>
-        <li>Обновление браузерного DOM происходит только в том случае, если при сравнении виртуальных DOM выявлены различия между ними.</li>
-    </ul>
-</section>
-
-
 <section class="slide">
     <h4>Вызовет ошибку:</h4>
     <img src="30.png" alt="" width="120%" >
@@ -597,6 +585,14 @@
     </svg>
 </section>
 
+<section class="slide">
+    <h2>Важно:</h2>
+    <ul></ul>
+    <li>Библиотека при изменениях сравнивает предыдущую версию объекта виртуального DOM с новой версией.</li>
+    <li class="next">Обновление браузерного DOM происходит только в том случае, если при сравнении виртуальных DOM выявлены различия между ними.</li>
+    </ul>
+</section>
+
 <section class="slide" style="    display: flex;
     align-items: center;">
     <h2 class="shrink " style="text-align: center;">Пытались ли решить эту проблему команды React или Google Translate?</h2>
@@ -617,8 +613,8 @@
 </section>
 
 <section class="slide">
-    <img src="answer.png" alt="" width="520px" style="    position: absolute;
-    top: 20px;">
+    <img src="answer.png" alt="" width="920px" style="    position: absolute;
+    top: 20px; left: 20px;">
     <figcaption class="copyright right white" style="z-index: 2;">
         <a href="https://github.com/facebook/react/issues/11538" style=" color: darkblue; font-size: 22px">Issue #11538 – facebook/react</a>
     </figcaption>
@@ -629,10 +625,10 @@
 </section>
 
 <section class="slide">
-    <h2>Альтернативные способы решения проблемы</h2>
+    <h2>А если иначе?</h2>
     <ul>
         <li>Поставить класс <b>notranslate</b> любому блоку</li>
-        <li>Подписаться на событие изменения значения атрибута <b>lang</b> тега html</li>
+        <li class="next">Подписаться на событие изменения значения атрибута <b>lang</b> тега html</li>
     </ul>
 </section>
 
@@ -648,8 +644,9 @@
 <section class="slide">
     <h2>Го дружить</h2>
     <ul>
-        <li><a href="https://github.com/facebook/react/issues/11538">Issue #11538 – facebook/react</a></li>
-<!--        <li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=872770">Issue #872770 – chromium</a></li>-->
+        <li>Twitter: <a href="https://twitter.com/olbolot">olbolot</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/olbol/">olbol</a></li>
+        <li>GitHub: <a href="https://github.com/OlBol">olbol</a></li>
     </ul>
 
 </section>

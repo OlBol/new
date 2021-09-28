@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e759fb12-c4fe-4f57-b363-44ad78f095a3" name="Default Changelist" comment="add all node modules">
-      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
+    <list default="true" id="e759fb12-c4fe-4f57-b363-44ad78f095a3" name="Default Changelist" comment="+">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_chromium.png" beforeDir="false" afterPath="$PROJECT_DIR$/screen_chromium.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_react.png" beforeDir="false" afterPath="$PROJECT_DIR$/screen_react.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
       <workItem from="1619036831008" duration="1361000" />
       <workItem from="1632581123238" duration="119000" />
       <workItem from="1632592884162" duration="6816000" />
-      <workItem from="1632761265269" duration="6002000" />
+      <workItem from="1632761265269" duration="7397000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1618071304928</created>
@@ -148,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619037256042</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="+">
+      <created>1632837723092</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1632837723092</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +173,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="add all node modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="add all node modules" />
+    <MESSAGE value="+" />
+    <option name="LAST_COMMIT_MESSAGE" value="+" />
   </component>
 </project>
