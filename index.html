@@ -76,7 +76,7 @@
 
     .first-slide:after,
     .first-slide:before {
-        display: none;
+        /*display: none;*/
     }
 
     .logo-icon_bluredLogo {
@@ -101,7 +101,7 @@
     <p>Болотова Ольга</p>
 </header>
 
-<section class="slide first-slide">
+<section class="slide first-slide clear">
     <div>
         <h1>
             Браузерные плагины – убийцы Virtual DOM
@@ -146,17 +146,17 @@
     </ul>
 </section>
 
-<section class="slide first-slide">
+<section class="slide first-slide clear">
     <div>
-        <h1>
-            Браузерные плагины – убийцы Virtual DOM
+        <h1 style="font-size: 86px; line-height: 1; text-align: center; margin: 0">
+            Браузерные плагины <br>–<br> убийцы Virtual DOM
         </h1>
         <div class="img-wrapper-f"></div>
         <img class="cover" src="anime-girl.png" alt="">
     </div>
 </section>
 
-<section class="slide first-slide">
+<section class="slide first-slide clear">
     <div>
         <img class="cover" src="killer.png" alt="" width="100%">
     </div>
@@ -204,7 +204,7 @@
 <!--    </div>-->
 <!--</section>-->
 
-<section class="slide  without-flag">
+<section class="slide  clear">
     <div class="browser">
         <div id="browserBar">
             <div id="controls">
@@ -254,7 +254,7 @@
     </div>
 </section>
 
-<section class="slide without-flag">
+<section class="slide clear">
     <div class="browser">
         <div id="browserBar">
             <div id="controls">
@@ -429,6 +429,46 @@
 </section>
 
 <section class="slide">
+    <h4 style="margin-bottom: 10px;     margin-top: 0;">Что VDOM ожидает:</h4>
+    <pre
+        style="font-size: 12px; ">
+                        <code><span class="pure">&lt;h3</span> <span class="yellow">class=</span><span class="blue">"parent"</span>>About The Author<span class="pure">&lt;/h3></span></code>
+                    </pre>
+    <h4 style="margin-bottom: 10px;">Что на самом деле в DOM:</h4>
+    <!--    <pre style="font-size: 12px;">-->
+    <!--                            <code>&lt;div class="parent"></code>-->
+    <!--        &lt;!&ndash;                                <code>  &lt;span></code>&ndash;&gt;-->
+    <!--                            <code>  &lt;font style="vertical-align: inherit;"></code>-->
+    <!--                            <code>    &lt;font style="vertical-align: inherit;"></code>-->
+    <!--                                <code>      Gammel tekst</code>-->
+    <!--                                <code>    &lt;/font></code>-->
+    <!--                                <code>  &lt;/font></code>-->
+    <!--        &lt;!&ndash;                                <code>  &lt;/span></code>&ndash;&gt;-->
+    <!--                                <code>&lt;/div></code>-->
+    <!--                        </pre>-->
+    <pre
+        style="font-size: 12px;">
+                    <code><span class="pure">&lt;h3</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">></span></code>
+                <code>  <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">>&#173;</span></code>
+                <code>    <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">></span></code>
+                <code>      Om forfatteren</code>
+                <code>    <span class="pure">&lt;/font></span></code>
+                <code>  <span class="pure">&lt;/font></span></code>
+                <code><span class="pure">&lt;/h3></span></code>
+                        </pre>
+</section>
+
+<section class="slide">
+<!--    <h2>Serious citations</h2>-->
+    <figure style="padding-top: 20px">
+        <blockquote>
+            <p>Виртуальный DOM - это облегченное представление DOM на языке JavaScript, используемое в декларативных веб-фреймворках, таких как React, Vue.js и Elm. Обновление виртуального DOM происходит сравнительно быстрее, чем обновление фактического DOM.</p>
+        </blockquote>
+        <figcaption>Википедия</figcaption>
+    </figure>
+</section>
+
+<section class="slide">
 <!--    <h2>Serious citations</h2>-->
     <figure style="padding-top: 20px">
         <blockquote>
@@ -440,435 +480,7 @@
     <p>Version: 17.0.2</p>
 </section>
 
-<section class="slide">
-    <h3 style="    line-height: 1;">Кейс 1: вставляемый узел – единственный текстовый узел в родителе</h3>
-    <img src="code1.png" alt="" width="700">
-
-    <div class="">
-        <div style="position: relative; height: 54.73px; max-height: 42px;">
-            <img src="1.png" alt="" width="300">
-
-            <!--                <span class="next" style="position: absolute; top: 0; left: 0">-->
-            <!--                    <img src="pointer.svg" alt="" style="position: absolute; width: 26px; left: 46px; bottom: 9px; z-index: 1">-->
-            <!--                    <img src="1.png" alt="" width="300">-->
-            <!--                </span>-->
-
-            <div class="next" style="position: absolute; top: 0">
-                <img src="3.png" alt="" width="300">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="slide without-flag">
-    <style>
-        .slide pre code {
-            margin-left: -75px !important;
-        }
-
-        .slide pre code::before {
-            position: absolute;
-            margin-left: -2em;
-            color: var(--color-grey);
-            opacity: 0.75;
-            counter-increment: code;
-            content: counter(code, decimal-leading-zero) '.';
-        }
-    </style>
-    <!--            <div style="position: relative; height: 100%;">-->
-    <div>
-        <div class="browser">
-            <div id="browserBar">
-                <div id="controls">
-                    <div id="close"></div>
-                    <div id="min"></div>
-                    <div id="max"></div>
-                </div>
-                <div id="tabs">
-                    <div class="tab">
-                        <!--                    <p v-on:click="select(tab)">{{tab.name}}</p>-->
-                        <!--                    <span v-on:click="closeTab(tab)">✖</span>-->
-                    </div>
-                </div>
-                <div id="tabcontrols">
-                    <i class="fa fa-plus" aria-hidden="true" id="newtab">
-                        <svg id="Layer_1" width="12" Layer 1
-                        " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>plus-cross-glyph</title>
-                        <polygon
-                            points="511.99 308.25 511.99 203.75 308.25 203.75 308.25 0 203.75 0 203.75 203.75 0.01 203.75 0.01 308.25 203.75 308.25 203.75 511.99 308.25 512 308.25 308.25 511.99 308.25"
-                            fill="#fff"/>
-                        </svg>
-                    </i>
-                    <i class="fa fa-bars" aria-hidden="true" id="menu">
-                        <div class="burger">
-                            <span class="top"></span>
-                            <span class="center"></span>
-                            <span class="bottom"></span>
-                        </div>
-                    </i>
-                </div>
-            </div>
-            <div class="browser-content">
-                <img class="no-width" src="1.png" alt="" width="300">
-                <div class="next" style="position: absolute; top: 0px; padding-left: 0.499999999999999999999999px">
-                    <img class="no-width" src="4.png" alt="" width="308">
-                </div>
-                <pre
-                    style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 11;">
-                        <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">>&lt;/div></span></code>
-                    </pre>
-                <img style=" width: 500px; left: inherit" src="dt.png" alt="">
-            </div>
-        </div>
-
-        <!--                    <img src="1.png" alt="" width="300">-->
-        <!--                    <pre style="font-size: 10px; line-height: 1 !important;">-->
-        <!--                        <code>&lt;div class="parent">&lt;/div></code>-->
-        <!--                    </pre>-->
-    </div>
-
-    <!--                <div class="next" style="position: absolute; top: 0; padding-left: 0.499999999999999999999999px">-->
-    <!--                    <img src="4.png" alt="" width="308">-->
-    <!--                </div>-->
-    <div>
-        <div class="browser next">
-            <div id="browserBar">
-                <div id="controls">
-                    <div id="close"></div>
-                    <div id="min"></div>
-                    <div id="max"></div>
-                </div>
-                <div id="tabs">
-                    <div class="tab">
-                        <!--                    <p v-on:click="select(tab)">{{tab.name}}</p>-->
-                        <!--                    <span v-on:click="closeTab(tab)">✖</span>-->
-                    </div>
-                </div>
-                <div id="tabcontrols">
-                    <i class="fa fa-plus" aria-hidden="true" id="newtab">
-                        <svg id="Layer_1" width="12" Layer 1
-                        " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>plus-cross-glyph</title>
-                        <polygon
-                            points="511.99 308.25 511.99 203.75 308.25 203.75 308.25 0 203.75 0 203.75 203.75 0.01 203.75 0.01 308.25 203.75 308.25 203.75 511.99 308.25 512 308.25 308.25 511.99 308.25"
-                            fill="#fff"/>
-                        </svg>
-                    </i>
-                    <i class="fa fa-bars" aria-hidden="true" id="menu">
-                        <div class="burger">
-                            <span class="top"></span>
-                            <span class="center"></span>
-                            <span class="bottom"></span>
-                        </div>
-                    </i>
-                </div>
-            </div>
-            <div class="browser-content" style="background-color: white">
-                <img class="no-width" src="5.png" alt="" width="308">
-                <pre
-                    style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 11;">
-                    <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">></span></code>
-                <code>  <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">>&#173;</span></code>
-                <code>    <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">></span></code>
-                <code>      Ny tekst</code>
-                <code>    <span class="pure">&lt;/font></span></code>
-                <code>  <span class="pure">&lt;/font></span></code>
-                <code><span class="pure">&lt;/div></span></code>
-                        </pre>
-                <img style=" width: 500px; left: inherit" src="dt.png" alt="">
-            </div>
-        </div>
-
-        <!--                    <img src="1.png" alt="" width="300">-->
-        <!--                    <pre style="font-size: 10px; line-height: 1 !important;">-->
-        <!--                        <code>&lt;div class="parent">&lt;/div></code>-->
-        <!--                    </pre>-->
-    </div>
-    <!--                <div class="next" style="position:absolute; background-color: white; top: 0; bottom: 0; z-index: 3;">-->
-    <!--                    <img src="5.png" alt="" width="308">-->
-
-    <!--                    <br/>-->
-    <!--                    <pre style="font-size: 10px; line-height: 1 !important;"><code>&lt;div class="parent"></code>-->
-    <!--                <code>    &lt;font style="vertical-align: inherit;">&#173;</code>-->
-    <!--                <code>        &lt;font style="vertical-align: inherit;"></code>-->
-    <!--                <code>            Ny tekst</code>-->
-    <!--                <code>        &lt;/font></code>-->
-    <!--                <code>    &lt;/font></code>-->
-    <!--                <code>&lt;/div></code>-->
-    <!--                        </pre>-->
-    <!--                </div>-->
-    <!--            </div>-->
-</section>
-
-<section class="slide" style="padding: 0; padding-top: 30px">
-    <div class="img-wrapper" style="position: relative">
-        <img src="setTextContent.png" alt="setTextContent" width="1142">
-        <div class="next" style="position: absolute; top: 0">
-            <img src="setTextContent_a.png" alt="setTextContent" width="1142">
-        </div>
-        <div class="next" style="position: absolute; z-index: 2; top: 134px;   left: 45px;  width: 600px;">
-            <ff style="position:absolute; top: 55px; left: 260px;">&lt;div class="parent">&lt;/div></ff>
-            <img src="arrow.svg" alt="" height="20px"
-                 style="position:absolute; transform: rotate(90deg); top: 80px; left: 336px;">
-            <ff style="position:absolute;  top: 55px; left: 450px;">Новый текст</ff>
-            <img src="arrow.svg" alt="" height="20px"
-                 style="position:absolute; transform: rotate(90deg); top: 80px; left: 480px;">
-        </div>
-    </div>
-</section>
-<section class="slide without-flag">
-    <div class="browser">
-        <div id="browserBar">
-            <div id="controls">
-                <div id="close"></div>
-                <div id="min"></div>
-                <div id="max"></div>
-            </div>
-            <div id="tabs">
-                <div class="tab">
-                    <!--                    <p v-on:click="select(tab)">{{tab.name}}</p>-->
-                    <!--                    <span v-on:click="closeTab(tab)">✖</span>-->
-                </div>
-            </div>
-            <div id="tabcontrols">
-                <i class="fa fa-plus" aria-hidden="true" id="newtab">
-                    <svg id="Layer_1" width="12" Layer 1
-                    " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>plus-cross-glyph</title>
-                    <polygon
-                        points="511.99 308.25 511.99 203.75 308.25 203.75 308.25 0 203.75 0 203.75 203.75 0.01 203.75 0.01 308.25 203.75 308.25 203.75 511.99 308.25 512 308.25 308.25 511.99 308.25"
-                        fill="#fff"/>
-                    </svg>
-                </i>
-                <i class="fa fa-bars" aria-hidden="true" id="menu">
-                    <div class="burger">
-                        <span class="top"></span>
-                        <span class="center"></span>
-                        <span class="bottom"></span>
-                    </div>
-                </i>
-            </div>
-        </div>
-        <div class="browser-content" style="background-color: white">
-            <img class="no-width" src="5.png" alt="" width="308">
-<!--            <pre-->
-<!--                style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 11;"><code>&lt;div class="parent"></code>-->
-<!--                <code>  &lt;font style="vertical-align: inherit;">&#173;</code>-->
-<!--                <code>    &lt;font style="vertical-align: inherit;"></code>-->
-<!--                <code>      Ny tekst</code>-->
-<!--                <code>    &lt;/font></code>-->
-<!--                <code>  &lt;/font></code>-->
-<!--                <code>&lt;/div></code>-->
-<!--                        </pre>-->
-            <pre
-                style="font-size: 12px; line-height: 1 !important; position: absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 11;">
-                    <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">></span></code>
-                <code>  <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">>&#173;</span></code>
-                <code>    <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">></span></code>
-                <code>      Ny tekst</code>
-                <code>    <span class="pure">&lt;/font></span></code>
-                <code>  <span class="pure">&lt;/font></span></code>
-                <code><span class="pure">&lt;/div></span></code>
-                        </pre>
-            <img style=" width: 500px; left: inherit" src="dt.png" alt="">
-        </div>
-    </div>
-</section>
-
-<section class="slide"  style="padding: 0; padding-top: 30px">
-    <div class="img-wrapper" style="">
-<!--        <img src="40.png" alt="" width="1243" style="z-index: 0; position:absolute; top:42%; transform: translateY(-50%); filter: blur(1px)">-->
-
-        <div style="position: relative; height: 71.8px;">
-            <img src="resetTextContent.png" alt="resetTextContent" width="1243">
-            <div class="next" style="position: absolute; top: 0">
-                <img src="resetTextContent_a.png" alt="resetTextContent" width="1242">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="slide"  style="padding: 0; padding-top: 30px">
-    <div class="img-wrapper" style="position: relative">
-        <img src="setTextContent_a.png" alt="setTextContent" width="1142">
-        <!--            <div style="position: absolute; top: 0">-->
-        <!--                <img src="setTextContent_a.png" alt="setTextContent" width="1042">-->
-        <!--            </div>-->
-        <div style="position: absolute; z-index: 2; top: 134px;   left: 45px;  width: 600px;">
-            <ff style="position:absolute; top: 55px; left: 260px;">&lt;div class="parent">&lt;/div></ff>
-            <img src="arrow.svg" alt="" height="20px"
-                 style="position:absolute; transform: rotate(90deg); top: 80px; left: 336px;">
-            <ff style="position:absolute;  top: 55px; left: 484px;">""</ff>
-            <img src="arrow.svg" alt="" height="20px"
-                 style="position:absolute; transform: rotate(90deg); top: 80px; left: 480px;">
-        </div>
-    </div>
-</section>
-
-<section class="slide">
-    <div>
-        <div class="browser">
-            <div id="browserBar">
-                <div id="controls">
-                    <div id="close"></div>
-                    <div id="min"></div>
-                    <div id="max"></div>
-                </div>
-                <div id="tabs">
-                    <div class="tab">
-                        <!--                    <p v-on:click="select(tab)">{{tab.name}}</p>-->
-                        <!--                    <span v-on:click="closeTab(tab)">✖</span>-->
-                    </div>
-                </div>
-                <div id="tabcontrols">
-                    <i class="fa fa-plus" aria-hidden="true" id="newtab">
-                        <svg id="Layer_1" width="12" Layer 1
-                        " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>plus-cross-glyph</title>
-                        <polygon
-                            points="511.99 308.25 511.99 203.75 308.25 203.75 308.25 0 203.75 0 203.75 203.75 0.01 203.75 0.01 308.25 203.75 308.25 203.75 511.99 308.25 512 308.25 308.25 511.99 308.25"
-                            fill="#fff"/>
-                        </svg>
-                    </i>
-                    <i class="fa fa-bars" aria-hidden="true" id="menu">
-                        <div class="burger">
-                            <span class="top"></span>
-                            <span class="center"></span>
-                            <span class="bottom"></span>
-                        </div>
-                    </i>
-                </div>
-            </div>
-            <div class="browser-content">
-                <img class="no-width" src="1.png" alt="" width="300">
-                <!--                    <div class="next" style="position: absolute; top: 0px; padding-left: 0.499999999999999999999999px">-->
-                <!--                        <img class="no-width" src="4.png" alt="" width="308" >-->
-                <!--                    </div>-->
-                <pre
-                    style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 11;">
-                    <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">>&lt;/div></span></code>
-                    </pre>
-                <img style=" width: 500px; left: inherit" src="dt.png" alt="">
-            </div>
-        </div>
-
-        <!--                    <img src="1.png" alt="" width="300">-->
-        <!--                    <pre style="font-size: 10px; line-height: 1 !important;">-->
-        <!--                        <code>&lt;div class="parent">&lt;/div></code>-->
-        <!--                    </pre>-->
-    </div>
-
-    <!--                <div class="next" style="position: absolute; top: 0; padding-left: 0.499999999999999999999999px">-->
-    <!--                    <img src="4.png" alt="" width="308">-->
-    <!--                </div>-->
-    <div>
-</section>
-
-<!--    <section class="slide">-->
-<!--        <img src="1.png" alt="" width="300">-->
-
-<!--        <div style="position: relative; padding-top: 100px">-->
-<!--            <ff style="position:absolute; font-size: 12px;top: 55px; left: 140px;">&lt;div class="parent">&lt;/div></ff>-->
-<!--            <img src="arrow.svg" alt="" height="20px"-->
-<!--                 style="position:absolute; transform: rotate(90deg); top: 80px; left: 250px;">-->
-<!--            <ff style="position:absolute; font-size: 12px;top: 55px; left: 362px;">""</ff>-->
-<!--            <img src="arrow.svg" alt="" height="20px"-->
-<!--                 style="position:absolute; transform: rotate(90deg); top: 80px; left: 357px;">-->
-<!--            <img src="6.png" alt="" width="500">-->
-<!--        </div>-->
-<!--        <br>-->
-<!--        <pre style="font-size: 10px; line-height: 1 !important;">-->
-<!--                <code>&lt;div class="parent">&lt;/div>-->
-<!--                </code>-->
-<!--            </pre>-->
-<!--        </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-<!--    <section class="slide">-->
-<!--        <div  class="img-wrapper">-->
-<!--            <img src="resetTextContent_a.png" alt="resetTextContent" width="1042">-->
-<!--        </div>-->
-<!--    </section>-->
-
-
-<!--    <section class="slide">-->
-<!--        <div  class="img-wrapper">-->
-<!--            <img src="appendChild_a.png" alt="appendChild" width="1042.2">-->
-<!--        </div>-->
-<!--    </section>-->
-
-<section class="slide">
-    <h3 style="    line-height: 1;">Кейс 2: вставляемый узел – последний в родителе элемент</h3>
-    <img src="9.png" alt="" width="700">
-
-    <div class="">
-        <div style="position: relative; height: 54.73px; max-height: 42px;">
-            <img src="1.png" alt="" width="300">
-
-            <!--                <span class="next" style="position: absolute; top: 0; left: 0">-->
-            <!--                    <img src="pointer.svg" alt="" style="position: absolute; width: 26px; left: 46px; bottom: 9px; z-index: 1">-->
-            <!--                    <img src="1.png" alt="" width="300">-->
-            <!--                </span>-->
-
-            <div class="next" style="position: absolute; top: 0">
-                <img src="10.png" alt="" width="295">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="slide"  style="padding: 0; padding-top: 30px">
-    <div class="img-wrapper">
-        <img src="insertOrAppendPlacementNode.png" alt="" width="965">
-        <img class="next" src="insertOrAppendPlacementNode_a.png" alt="" width="965" style="position:absolute;">
-    </div>
-</section>
-
-<!--<section class="slide"  style="padding: 0; padding-top: 30px">-->
-<!--    <div class="img-wrapper">-->
-<!--        <img src="insertOrAppendPlacementNode_a.png" alt="" width="965">-->
-<!--    </div>-->
-<!--</section>-->
-
-<section class="slide" style="padding: 0; padding-top: 30px">
-    <div class="img-wrapper">
-        <div style="position: relative; height: 71.8px;">
-            <img src="appendChild.png" alt="appendChild" width="1142.5">
-            <div class="next" style="position: absolute; top: 0">
-                <img src="appendChild_a.png" alt="appendChild" width="1142.2">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="slide without-flag">
-<!--    <div class="">-->
-<!--        <div style="position: relative;">-->
-<!--            <div>-->
-<!--                <img src="1.png" alt="" width="300">-->
-<!--                <pre style="font-size: 10px; line-height: 1 !important;">-->
-<!--                            <code>&lt;div className='parent'>&lt;/div></code>-->
-<!--                        </pre>-->
-<!--            </div>-->
-
-<!--            <div class="next" style="position: absolute; background-color: white; top: 0px;">-->
-<!--                <img src="8.png" alt="" width="305">-->
-<!--                <pre style="font-size: 10px; line-height: 2 !important;">-->
-<!--                            <code>&lt;div class="parent"></code>-->
-<!--                                <code>    &lt;span></code>-->
-<!--                            <code>        &lt;font style="vertical-align: inherit;"></code>-->
-<!--                            <code>            &lt;font style="vertical-align: inherit;">Ny gjenstand</code>-->
-<!--                                <code>  &lt;/font></code>-->
-<!--                                <code>  &lt;/font></code>-->
-<!--                                <code>  &lt;/span></code>-->
-<!--                                <code>&lt;/div></code>-->
-<!--                        </pre>-->
-<!--            </div>-->
-
-<!--            &lt;!&ndash;                <div class="next" style="position: absolute; top: 0; padding-left: 0.499999999999999999999999px">&ndash;&gt;-->
-<!--            &lt;!&ndash;                    <img src="4.png" alt="" width="308">&ndash;&gt;-->
-<!--            &lt;!&ndash;                </div>&ndash;&gt;-->
-
-<!--        </div>-->
-<!--    </div>-->
+<section class="slide clear">
     <div class="browser">
         <div id="browserBar">
             <div id="controls">
@@ -901,96 +513,12 @@
             </div>
         </div>
         <div class="browser-content">
-            <img class="no-width" src="1.png" alt="" width="300">
-            <div class="next" style="position: absolute; top: 0px; padding-left: 0.499999999999999999999999px">
-                <img class="no-width" src="4.png" alt="" width="308">
-            </div>
-            <div class="next">
-            <div  style="position: absolute; top: 0px; padding-left: 0.499999999999999999999999px; background-color: #fff; height: 100%;">
-                <img class="no-width" src="8.png" alt="" width="308">
-
-            </div>
-<!--                <pre style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 12;">-->
-<!--                            <code>&lt;div class="parent"></code>-->
-<!--                                <code>  &lt;span></code>-->
-<!--                            <code>    &lt;font style="vertical-align: inherit;"></code>-->
-<!--                            <code>      &lt;font style="vertical-align: inherit;"></code>-->
-<!--                                <code>        Ny gjenstand</code>-->
-<!--                                <code>      &lt;/font></code>-->
-<!--                                <code>    &lt;/font></code>-->
-<!--                                <code>  &lt;/span></code>-->
-<!--                                <code>&lt;/div></code>-->
-<!--                        </pre>-->
-
-                <pre
-                    style="font-size: 12px; line-height: 1 !important; position: absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 12;">
-                    <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">></span></code>
-                    <code>  <span class="pure">&lt;span></span></code>
-                <code>    <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">>&#173;</span></code>
-                <code>      <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">></span></code>
-                <code>        Ny gjenstand</code>
-                <code>      <span class="pure">&lt;/font></span></code>
-                <code>    <span class="pure">&lt;/font></span></code>
-                    <code>  <span class="pure">&lt;/span></span></code>
-                <code><span class="pure">&lt;/div></span></code>
-                        </pre>
-            </div>
-            <pre
-                style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 11;">
-                    <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">>&lt;/div></span></code>
-                    </pre>
-            <img style=" width: 500px; left: inherit" src="dt.png" alt="">
+            <img class="" src="15_1.png" alt="" style="z-index: 15; width: 1946px; position: absolute; right: 0; left: inherit">
         </div>
     </div>
 </section>
 
-<section class="slide">
-    <img src="9.png" alt="" width="700" style="position:relative; top: 100px">
-    <img class="next" style="position:absolute; left: 98px; top: 176px;" src="1111.png" alt="" width="1007">
-    <svg style="z-index: 3; position: absolute; left: 152px; top: 299px; transform: rotate(19deg);" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-        <path fill="#CC3B2F" d="M24 12l-9-8v6h-15v4h15v6z"></path>
-    </svg>
-    </div>
-</section>
-
-<section class="slide" style="padding: 0; padding-top: 30px">
-    <div class="img-wrapper">
-        <img src="insertOrAppendPlacementNode_i.png" alt="" width="965">
-    </div>
-</section>
-
-<section class="slide">
-    <h3 style="    line-height: 1;">Кейс 3: вставляемый узел – не последний узел в родителе</h3>
-
-    <img src="code3.png" alt="" width="700">
-
-    <div class="">
-        <div style="position: relative; height: 54.73px; max-height: 42px;">
-            <img src="11.png" alt="" width="300" style="padding-left: 4px; padding-top: 2px">
-
-            <div class="next" style="position: absolute; top: 0">
-                <img src="12.png" alt="" width="300">
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<section class="slide" style="padding: 0; padding-top: 30px">
-    <div class="img-wrapper">
-        <img src="insertBefore.png" alt="insertBefore" width="1142">
-        <img class="next" src="insertBefore_a.png" alt="insertBefore" width="1142" style="position:absolute;">
-    </div>
-</section>
-
-<!--<section class="slide">-->
-<!--    <div class="img-wrapper">-->
-<!--        <img src="insertBefore_a.png" alt="insertBefore" width="1042">-->
-<!--    </div>-->
-<!--</section>-->
-
-
-<section class="slide without-flag">
+<section class="slide clear">
     <div class="browser">
         <div id="browserBar">
             <div id="controls">
@@ -1023,116 +551,16 @@
             </div>
         </div>
         <div class="browser-content">
-<!--            <img class="no-width" src="1.png" alt="" width="300">-->
-            <div style="position: absolute; top: 0">
-                <img class="no-width" src="11.png" alt="" width="300">
-            </div>
-            <div class="next"  style="position: absolute; top: -5.5px; left: -2px">
-                <img class="no-width" src="13.png" alt="" width="411">
-            </div>
-            <div class="next"
-                 style="position: absolute; top: -2.5px; left: -2.6px; background-color: white; height: 380px; width: 100%">
-                <img class="no-width" src="14.png" alt="" width="301">
-<!--            </div>-->
-<!--            <div class="next">-->
-                <div  style="position: absolute; top: 0px; padding-left: 0.499999999999999999999999px; background-color: #fff; height: 100%;">
-<!--                    <img class="no-width" src="8.png" alt="" width="308">-->
-
-                </div>
-<!--                <pre style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 23.5px; width: 475.5px; padding-left: 5px;padding-top: 10px;z-index: 12;">-->
-<!--                            <code>&lt;div class="parent"></code>-->
-<!--&lt;!&ndash;                                <code>  &lt;span></code>&ndash;&gt;-->
-<!--                            <code>  &lt;font style="vertical-align: inherit;"></code>-->
-<!--                            <code>    &lt;font style="vertical-align: inherit;"></code>-->
-<!--                                <code>      Gammel tekst</code>-->
-<!--                                <code>    &lt;/font></code>-->
-<!--                                <code>  &lt;/font></code>-->
-<!--&lt;!&ndash;                                <code>  &lt;/span></code>&ndash;&gt;-->
-<!--                                <code>&lt;/div></code>-->
-<!--                        </pre>-->
-
-                <pre
-                    style="font-size: 12px; line-height: 1 !important; position: absolute; background-color: #fff; right: 0; top: 23.5px; width: 475.5px; padding-left: 15px;padding-top: 10px;z-index: 12;">
-                    <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">></span></code>
-                <code>  <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">>&#173;</span></code>
-                <code>    <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">></span></code>
-                <code>      Gammel tekst</code>
-                <code>    <span class="pure">&lt;/font></span></code>
-                <code>  <span class="pure">&lt;/font></span></code>
-                <code><span class="pure">&lt;/div></span></code>
-                        </pre>
-
-            </div>
-            <pre
-                style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 11;">
-<!--                        <code>&lt;div class="parent">Старый текст&lt;/div></code>-->
-                    <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">>Старый текст&lt;/div></span></code>
-                    </pre>
-            <img style=" width: 500px; left: inherit" src="dt.png" alt="">
-            <img class="next" src="15_1.png" alt="" style="z-index: 15; width: 1075px; position: absolute; right: 0; left: inherit">
+            <img class="" src="15_2.png" alt="" style="z-index: 15; width: 1946px; position: absolute; right: 0; left: inherit">
         </div>
     </div>
-<!--    <div style="position: relative; height: 54.73px; max-height: 42px;">-->
-<!--        <div style="position: absolute; top: 0">-->
-<!--            <img src="11.png" alt="" width="300">-->
-<!--        </div>-->
-<!--        <div class="next" style="position: absolute; top: -5.5px; left: -2px">-->
-<!--            <img src="13.png" alt="" width="411">-->
-<!--        </div>-->
-<!--        <div class="next"-->
-<!--             style="position: absolute; top: -2.5px; left: -2.6px; background-color: white; height: 380px; width: 450px">-->
-<!--            <img src="14.png" alt="" width="301">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="next">-->
-<!--        <div style="position: absolute; top: 0; left: 0; background-color: white; height: 380px; width: 450px"></div>-->
-<!--        <img src="devtools2.png" alt="" height="577" style="position: absolute; top: 0; right: 0; z-index: 2">-->
-<!--    </div>-->
 </section>
 
-<section class="slide" style="padding: 0; padding-top: 30px">
-            <div  class="img-wrapper">
-    <div style="position: relative; padding-top: 100px">
-        <!--                <img src="arrow.svg" alt="" height="20px" style="position:absolute; transform: rotate(90deg); top: 80px; left: 250px;">-->
-        <ff style="position: absolute; font-size: 14px; top: -32px; left: 484px;     width: 115px;">Старый текст</ff>
-<!--        <img src="icons8-вниз-2-96.png" alt="" height="30px" width="23px"-->
-<!--             style="position:absolute; top: 70px; left: 470px;">-->
-        <img src="arrow.svg" alt="" height="20px"
-             style="position:absolute; transform: rotate(90deg); top: -5px; left: 523px;">
-    </div>
-    <img src="insertBefore.png" alt="insertBefore" width="1142">
-            </div>
-</section>
 
-<section class="slide">
-    <h4 style="margin-bottom: 10px;     margin-top: 0;">Что VDOM ожидает:</h4>
-    <pre
-        style="font-size: 12px; ">
-                        <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">>Старый текст&lt;/div></span></code>
-                    </pre>
-    <h4 style="margin-bottom: 10px;">Что на самом деле в DOM:</h4>
-<!--    <pre style="font-size: 12px;">-->
-<!--                            <code>&lt;div class="parent"></code>-->
-<!--        &lt;!&ndash;                                <code>  &lt;span></code>&ndash;&gt;-->
-<!--                            <code>  &lt;font style="vertical-align: inherit;"></code>-->
-<!--                            <code>    &lt;font style="vertical-align: inherit;"></code>-->
-<!--                                <code>      Gammel tekst</code>-->
-<!--                                <code>    &lt;/font></code>-->
-<!--                                <code>  &lt;/font></code>-->
-<!--        &lt;!&ndash;                                <code>  &lt;/span></code>&ndash;&gt;-->
-<!--                                <code>&lt;/div></code>-->
-<!--                        </pre>-->
-    <pre
-        style="font-size: 12px;">
-                    <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">></span></code>
-                <code>  <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">>&#173;</span></code>
-                <code>    <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">></span></code>
-                <code>      Gammel tekst</code>
-                <code>    <span class="pure">&lt;/font></span></code>
-                <code>  <span class="pure">&lt;/font></span></code>
-                <code><span class="pure">&lt;/div></span></code>
-                        </pre>
-</section>
+
+
+
+
 
 <section class="slide">
     <h2>Важно:</h2>
@@ -1142,137 +570,6 @@
     </ul>
 </section>
 
-<section class="slide">
-    <div class="img-wrapper">
-        <img src="20.png" alt="insertBefore" width="1000">
-    </div>
-</section>
-
-<section class="slide" style="padding: 0; padding-top: 30px">
-    <div class="img-wrapper">
-        <img src="removeChild.png" alt="removeChild" width="1142">
-        <img class="next" src="removeChild_a.png" alt="removeChild" width="1142" style="position:absolute;">
-    </div>
-</section>
-
-<section class="slide without-flag">
-    <div class="browser">
-        <div id="browserBar">
-            <div id="controls">
-                <div id="close"></div>
-                <div id="min"></div>
-                <div id="max"></div>
-            </div>
-            <div id="tabs">
-                <div class="tab">
-                    <!--                    <p v-on:click="select(tab)">{{tab.name}}</p>-->
-                    <!--                    <span v-on:click="closeTab(tab)">✖</span>-->
-                </div>
-            </div>
-            <div id="tabcontrols">
-                <i class="fa fa-plus" aria-hidden="true" id="newtab">
-                    <svg id="Layer_1" width="12" Layer 1
-                    " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>plus-cross-glyph</title>
-                    <polygon
-                        points="511.99 308.25 511.99 203.75 308.25 203.75 308.25 0 203.75 0 203.75 203.75 0.01 203.75 0.01 308.25 203.75 308.25 203.75 511.99 308.25 512 308.25 308.25 511.99 308.25"
-                        fill="#fff"/>
-                    </svg>
-                </i>
-                <i class="fa fa-bars" aria-hidden="true" id="menu">
-                    <div class="burger">
-                        <span class="top"></span>
-                        <span class="center"></span>
-                        <span class="bottom"></span>
-                    </div>
-                </i>
-            </div>
-        </div>
-        <div class="browser-content">
-            <!--            <img class="no-width" src="1.png" alt="" width="300">-->
-            <div style="position: absolute; top: 0">
-                <img class="no-width" src="21.png" alt="" width="600" style="margin-top: -8px;">
-            </div>
-            <div class="next"  style="position: absolute; top: -6.5px; left: -0.5px">
-                <img class="no-width" src="22.png" alt="" width="515">
-            </div>
-            <div class="next"
-                 style="position: absolute; top: -5.2px; left: -1.9px; background-color: white; height: 380px; width: 100%">
-                <img class="no-width" src="23.png" alt="" width="550">
-                <!--            </div>-->
-                <!--            <div class="next">-->
-                <div  style="position: absolute; top: 0px; padding-left: 0.499999999999999999999999px; background-color: #fff; height: 100%;">
-                    <!--                    <img class="no-width" src="8.png" alt="" width="308">-->
-
-                </div>
-<!--                <pre style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 23px; width: 475.5px; padding-left: 5px;padding-top: 10px;z-index: 12;">-->
-<!--                            <code>&lt;div class="parent"></code>-->
-<!--                    &lt;!&ndash;                                <code>  &lt;span></code>&ndash;&gt;-->
-<!--                            <code>  &lt;font style="vertical-align: inherit;"></code>-->
-<!--                            <code>    &lt;font style="vertical-align: inherit;"></code>-->
-<!--                                <code>      Ny tekst</code>-->
-<!--                                <code>    &lt;/font></code>-->
-<!--                                <code>  &lt;/font></code>-->
-<!--                            <code>  &lt;font style="vertical-align: inherit;"></code>-->
-<!--                            <code>    &lt;font style="vertical-align: inherit;"></code>-->
-<!--                                <code>      Gammel node</code>-->
-<!--                                <code>    &lt;/font></code>-->
-<!--                                <code>  &lt;/font></code>-->
-<!--                    &lt;!&ndash;                                <code>  &lt;/span></code>&ndash;&gt;-->
-<!--                                <code>&lt;/div></code>-->
-<!--                        </pre>-->
-                <style>
-                    .long-pre code {
-                        font-size: 14.6px !important;
-                    }
-                </style>
-                <pre class="long-pre"
-                    style="font-size: 12px !important; line-height: 1 !important; position: absolute; background-color: #fff; right: 0; top: 26px; width: 476px; padding-left: 15px;padding-top: 10px;z-index: 12;">
-                    <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">></span></code>
-                <code>  <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">>&#173;</span></code>
-                <code>    <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">></span></code>
-                <code>      Ny tekst</code>
-                <code>    <span class="pure">&lt;/font></span></code>
-                <code>  <span class="pure">&lt;/font></span></code>
-                <code>  <span class="pure">&lt;span></span></code>
-                <code>    <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">>&#173;</span></code>
-                <code>      <span class="pure">&lt;font</span> <span class="yellow">style=</span><span class="blue">"vertical-align: inherit;"</span><span class="pure">></span></code>
-                <code>        Gammel node</code>
-                <code>      <span class="pure">&lt;/font></span></code>
-                <code>    <span class="pure">&lt;/font></span></code>
-                <code>  <span class="pure">&lt;/span></span></code>
-                <code><span class="pure">&lt;/div></span></code>
-                        </pre>
-
-
-            </div>
-            <pre
-                style="font-size: 12px; line-height: 1 !important; position:absolute; background-color: #fff; right: 0; top: 21px; width: 478px; padding-left: 15px;padding-top: 10px;z-index: 11;">
-                        <code><span class="pure">&lt;div</span> <span class="yellow">class=</span><span class="blue">"parent"</span><span class="pure">></span></code>
-                            <code>  Новый текст </code>
-                <code>  <span class="pure">&lt;span></span> Старый узел<span class="pure">&lt;/span></span></code>
-                            <code><span class="pure">&lt;/div></span></code>
-                    </pre>
-            <img style=" width: 500px; left: inherit" src="dt.png" alt="">
-            <img class="next" src="15_2.png" alt="" style="z-index: 15; width: 1075px; position: absolute; right: 0; left: inherit">
-        </div>
-    </div>
-    <!--    <div style="position: relative; height: 54.73px; max-height: 42px;">-->
-    <!--        <div style="position: absolute; top: 0">-->
-    <!--            <img src="11.png" alt="" width="300">-->
-    <!--        </div>-->
-    <!--        <div class="next" style="position: absolute; top: -5.5px; left: -2px">-->
-    <!--            <img src="13.png" alt="" width="411">-->
-    <!--        </div>-->
-    <!--        <div class="next"-->
-    <!--             style="position: absolute; top: -2.5px; left: -2.6px; background-color: white; height: 380px; width: 450px">-->
-    <!--            <img src="14.png" alt="" width="301">-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--    <div class="next">-->
-    <!--        <div style="position: absolute; top: 0; left: 0; background-color: white; height: 380px; width: 450px"></div>-->
-    <!--        <img src="devtools2.png" alt="" height="577" style="position: absolute; top: 0; right: 0; z-index: 2">-->
-    <!--    </div>-->
-</section>
 
 <section class="slide">
     <h4>Вызовет ошибку:</h4>
@@ -1305,17 +602,26 @@
     <h2 class="shrink " style="text-align: center;">Пытались ли решить эту проблему команды React или Google Translate?</h2>
 </section>
 
-<section class="slide without-flag">
-    <img src="screen_chromium.png" alt="" width="100%" style="position:absolute; top: 0; left: 0;z-index: 2">
+<section class="slide clear">
+    <img src="screen_chromium.png" alt="" width="96%" style="position:absolute; top: 0; left: 0;z-index: 2">
+    <figcaption class="copyright right white" style="z-index: 2;">
+        <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=872770" style=" color: darkblue; font-size: 22px">Issue #872770 – chromium</a>
+    </figcaption>
 </section>
 
-<section class="slide without-flag">
-    <img src="screen_react.png" alt="" width="100%" style="position:absolute; top: 0; left: 0;z-index: 2">
+<section class="slide clear">
+    <img src="screen_react.png" alt="" width="98%" style="position:absolute; top: 0; left: 0;z-index: 2;right: 100px">
+    <figcaption class="copyright right white" style="z-index: 2;">
+        <a href="https://github.com/facebook/react/issues/11538" style=" color: darkblue; font-size: 22px">Issue #11538 – facebook/react</a>
+    </figcaption>
 </section>
 
 <section class="slide">
     <img src="answer.png" alt="" width="520px" style="    position: absolute;
     top: 20px;">
+    <figcaption class="copyright right white" style="z-index: 2;">
+        <a href="https://github.com/facebook/react/issues/11538" style=" color: darkblue; font-size: 22px">Issue #11538 – facebook/react</a>
+    </figcaption>
 </section>
 
 <section class="slide" style="background-color: #F5F8FA">
@@ -1340,12 +646,18 @@
 </section>
 
 <section class="slide">
-    <h2>Ссылки</h2>
+    <h2>Го дружить</h2>
     <ul>
         <li><a href="https://github.com/facebook/react/issues/11538">Issue #11538 – facebook/react</a></li>
-        <li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=872770">Issue #872770 – chromium</a></li>
+<!--        <li><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=872770">Issue #872770 – chromium</a></li>-->
     </ul>
 
+</section>
+
+<section class="slide">
+    <h2>Спасибо за внимание</h2>
+<!--    <br>-->
+    <img src="qr.jpeg" width="300" style="position:relative; left: 250px;">
 </section>
 
 
